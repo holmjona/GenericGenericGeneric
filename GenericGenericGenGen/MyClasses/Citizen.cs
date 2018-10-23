@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClasses {
-    class Citizen : Person {
+    public class Citizen : Person {
         
 
         public Citizen(string fName, string lName)

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btnMakeCitizens" Content="Make People" HorizontalAlignment="Left" Margin="69,59,0,0" VerticalAlignment="Top" Width="104" Height="27" Click="btnMakeCitizens_Click"/>
+
     </Grid>
 </Window>

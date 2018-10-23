@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClasses {
-    abstract class Person {
+    public abstract class Person {
         #region Private Variables
         protected String _FirstName;
         private String _MiddleName;
