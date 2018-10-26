@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClasses {
-    class SuperHero : Person, IFlyable {
+   public class SuperHero : Person, IFlyable {
         private string _Power;
         private Citizen _Alias;
 

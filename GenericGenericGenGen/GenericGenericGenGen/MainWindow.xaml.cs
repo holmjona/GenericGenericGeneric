@@ -56,11 +56,84 @@ namespace GenericGenericGenGen {
 
             Citizen c = new Citizen("Billy","Bo");
 
-            Button b = (Button)this.FindName("btnMakeCitizens");
+            SuperHero s1 = new SuperHero("Bat", "Man") { Height = 74 };
+            SuperHero s2 = new SuperHero("Squirrel","Girl") { Height = 54 };
+            SuperHero s3 = new SuperHero("Cat","Woman") { Height = 58 };
+            SuperHero s4 = new SuperHero("The","Flash") { Height = 66 };
+            SuperHero s5 = new SuperHero("Ant","Man") { Height = 64 };
+            SuperHero s6 = new SuperHero("Aqua","Man") { Height = 72 };
+            SuperHero s7 = new SuperHero("Wonder","Woman") { Height = 76 };
+            SuperHero s8 = new SuperHero("Spider","Man") { Height = 62 };
 
-            for (int i = 0; i < 9; i++) {
-                Button btn = (Button)this.FindName("btn_" + i);
+            List<int> lst = new List<int>();
+
+            HideOut<SuperHero> hallOfJustice = new HideOut<SuperHero>();
+            hallOfJustice.Members.Add(s1);
+            hallOfJustice.Members.Add(s2);
+            hallOfJustice.Members.Add(s3);
+            hallOfJustice.Members.Add(s4);
+            hallOfJustice.Members.Add(s5);
+            hallOfJustice.Members.Add(s6);
+            hallOfJustice.Members.Add(s7);
+            hallOfJustice.Members.Add(s8);
+
+            Villian v1 = new Villian();
+            v1.FirstName = "Joker";
+            Villian v2 = new Villian { FirstName = "Lex", LastName = "Luther" };
+
+            HideOut<Villian> hallOfDoom = new HideOut<Villian>();
+            hallOfDoom.Members.Add(v1);
+            hallOfDoom.Members.Add(v2);
+
+            HideOut<Person> cityHall = new HideOut<Person>();
+            cityHall.Members.Add(s1);
+            cityHall.Members.Add(v1);
+            cityHall.Members.Add(c);
+
+            Prison<Villian,SuperHero> arkhamAsylum = new Prison<Villian,SuperHero>();
+            arkhamAsylum.Jailor = s1;
+            arkhamAsylum.Inmates.Add(v1);
+
+            Prison<SuperHero,Villian> hallOfDoomPrison = new Prison<SuperHero,Villian>();
+            hallOfDoomPrison.Jailor = v2;
+            hallOfDoomPrison.Inmates.Add(s4);
+
+
+            Prison<Person,Citizen > alcatraz = new Prison<Person,Citizen>();
+
+            var listOfMans = hallOfJustice.Members.Where(m => m.LastName == "Man");
+
+            List<SuperHero> mans = new List<SuperHero>();
+            foreach (SuperHero m in hallOfJustice.Members) {
+                if(m.LastName == "Man") {
+                    mans.Add(m);
+                }
             }
+
+            double mxHeight = hallOfJustice.Members.Max(m => m.Height);
+            MessageBox.Show(mxHeight.ToString());
+
+            SuperHero shorty = hallOfJustice.Members.FirstOrDefault(sup => sup.Height == 54);
+            MessageBox.Show(shorty.FullName);
+
+            
+
+
+            string s = "";
+            foreach (SuperHero sup in listOfMans) {
+                s += sup.FullName + ", ";
+            }
+            MessageBox.Show(s);
+
+
+
+
+
+            //Button b = (Button)this.FindName("btnMakeCitizens");
+
+            //for (int i = 0; i < 9; i++) {
+            //    Button btn = (Button)this.FindName("btn_" + i);
+            //}
         }
     }
 }

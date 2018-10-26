@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClasses {
-    class Villian : Person {
+   public class Villian : Person {
         private string _Lair;
 
         public string Lair {
