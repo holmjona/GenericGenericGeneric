@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GenericGenericGenGen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" KeyUp="Window_KeyUp">
     <Grid>
         <Button x:Name="btnMakeCitizens" Content="Make People" HorizontalAlignment="Left" Margin="69,59,0,0" VerticalAlignment="Top" Width="104" Height="27" Click="btnMakeCitizens_Click"/>
+        <Border x:Name="brdOutline" BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="266,108,0,0"  >
+            <TextBlock x:Name="tbOutput" TextWrapping="Wrap" Text="?" TextAlignment="Center" Height="80" Width="200" FontSize="40
+                   "/>
+        </Border>
+        <TextBox x:Name="txtInput" HorizontalAlignment="Left" Height="23" Margin="302,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" KeyUp="txtInput_KeyUp"/>
 
     </Grid>
 </Window>

@@ -135,5 +135,35 @@ namespace GenericGenericGenGen {
             //    Button btn = (Button)this.FindName("btn_" + i);
             //}
         }
+
+        private void txtInput_KeyUp(object sender, KeyEventArgs e) {
+            TextBox txt = (TextBox)sender;
+            txt.Text = "";
+            tbOutput.Text = txt.Text;
+            //MessageBox.Show(txt.Text);
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e) {
+            //MessageBox.Show(e.Key.ToString());
+
+            //tbOutput.Text = Enum.GetName(typeof(Key), e.Key+1).ToString();
+            int keyValue = (int)e.Key;
+            tbOutput.Text = keyValue.ToString();
+            Thickness thk = brdOutline.BorderThickness;
+
+            //if (e.Key == Key.A) {
+            //    brdOutline.BorderBrush = new SolidColorBrush(Colors.Blue);
+            //} else {
+            //    brdOutline.BorderBrush = new SolidColorBrush(Colors.Green);
+            //}
+
+            if (e.Key == Key.NumPad8)
+                thk.Top++;
+            else if (e.Key == Key.NumPad2)
+                thk.Bottom++;
+
+            brdOutline.BorderThickness = thk;
+
+        }
     }
 }
